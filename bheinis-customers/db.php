@@ -1,19 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "bheinis";
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
-
-<?php
 $servername = "localhost";  // Your database server
-$username = "root";         // Your database username
-$password = "";             // Your database password (empty if no password)
+$username = "bheinis_user";         // Your database username
+$password = "amir@00Lutfi";             // Your database password (empty if no password)
 $dbname = "bheinis";  // Your database name
 
 // Create connection
