@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";  // Your database server
 $username = "bheinis_user";         // Your database username
-$password = "amir@00Lutfi";             // Your database password (empty if no password)
+$password = "amir1234";             // Your database password (empty if no password)
 $dbname = "bheinis";  // Your database name
 
 // Create connection
