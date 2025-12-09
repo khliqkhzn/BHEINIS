@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+include '../db.php'; 
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];

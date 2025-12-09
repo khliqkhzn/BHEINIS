@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-include("config.php");
+include("../db.php");
 
 // Show only products in the "Kids" category (assuming category_id = 3)
 $sql = "SELECT p.*, c.category_name AS category 

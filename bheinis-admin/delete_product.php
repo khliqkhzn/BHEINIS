@@ -1,4 +1,6 @@
-<?php include("session.php"); include("config.php");
+<?php 
+include("session.php"); 
+include("../db.php");
 
 $id = $_GET['id'];
 $conn->query("DELETE FROM products WHERE id=$id");

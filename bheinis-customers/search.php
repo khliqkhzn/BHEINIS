@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php'; 
 session_start();
 
 $keyword = isset($_GET['q']) ? trim($_GET['q']) : '';

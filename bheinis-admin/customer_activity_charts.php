@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config.php';
+include '../db.php';
 
 // Group activity count by type
 $sql = "SELECT activity_type, COUNT(*) as total FROM customer_activity GROUP BY activity_type";

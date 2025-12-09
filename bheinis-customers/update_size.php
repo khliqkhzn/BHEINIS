@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php'; 
 session_start();
 
 if (isset($_POST['cart_item_id']) && isset($_POST['size'])) {

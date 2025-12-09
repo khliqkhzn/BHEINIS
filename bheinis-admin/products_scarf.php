@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-include("config.php");
+include("../db.php");
 
 // Define low stock threshold
 $lowStockThreshold = 10;

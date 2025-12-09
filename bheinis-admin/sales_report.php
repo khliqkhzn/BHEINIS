@@ -1,5 +1,6 @@
 <?php
-include 'config.php';
+include '../db.php';
+
 
 // Get the report type from the button menu, default to monthly
 $type = $_GET['type'] ?? 'monthly';

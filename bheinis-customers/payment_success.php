@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php'; 
 
 // Step 1: Get token or order_id
 $token = $_GET['token'] ?? '';

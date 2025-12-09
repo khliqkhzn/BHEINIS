@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-include("config.php");
+include("../db.php");
 
 // ✅ Handle shipment update
 if (isset($_POST['update_shipment'])) {

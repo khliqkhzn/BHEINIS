@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("../db.php");
 
 if (isset($_GET['category_id'])) {
     $category_id = intval($_GET['category_id']);

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php'; 
 
 // Get category from URL parameter, default to 'Women'
 $categoryName = isset($_GET['cat']) ? ucfirst(strtolower($_GET['cat'])) : 'Women';

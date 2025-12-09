@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-include("config.php");
+include("../db.php");
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

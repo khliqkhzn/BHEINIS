@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php'; 
 
 // ✅ Log activity: user visited All Products page
 if (isset($_SESSION['user_id'])) {
@@ -12,28 +12,29 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // === Default filters ===
-$where = "WHERE 1"; // Show all categories
+$categoryFilter = isset($_GET['category_filter']) ? $_GET['category_filter'] : 'all';
 $minPrice = isset($_GET['min_price']) ? floatval($_GET['min_price']) : 0;
 $maxPrice = isset($_GET['max_price']) ? floatval($_GET['max_price']) : 9999;
 $availability = isset($_GET['availability']) ? $_GET['availability'] : [];
-$categoryFilter = isset($_GET['category_filter']) ? $_GET['category_filter'] : 'all';
 
-// Filter by category (if selected)
+// Start building WHERE clause
+$where = "WHERE 1";
+
+// --- Category Filter ---
 if ($categoryFilter !== 'all') {
-    $where .= " AND category_id = (SELECT category_id FROM category WHERE category_name = '$categoryFilter' LIMIT 1)";
+    $categoryFilterEscaped = $conn->real_escape_string($categoryFilter);
+    $where .= " AND LOWER(c.category_name) = LOWER('$categoryFilterEscaped')";
 }
 
-// Price filter
-if ($minPrice || $maxPrice < 9999) {
-    $where .= " AND price BETWEEN $minPrice AND $maxPrice";
-}
+// --- Price Filter ---
+$where .= " AND p.price BETWEEN $minPrice AND $maxPrice";
 
-// Availability filter
+// --- Availability Filter ---
 if (!empty($availability)) {
-    if (in_array("in_stock", $availability)) {
-        $where .= " AND stock > 0";
-    } elseif (in_array("out_of_stock", $availability)) {
-        $where .= " AND stock = 0";
+    if (in_array("in_stock", $availability) && !in_array("out_of_stock", $availability)) {
+        $where .= " AND p.stock > 0";
+    } elseif (in_array("out_of_stock", $availability) && !in_array("in_stock", $availability)) {
+        $where .= " AND p.stock = 0";
     }
 }
 
@@ -46,6 +47,7 @@ $sql = "SELECT p.*, c.category_name
 
 $result = $conn->query($sql);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

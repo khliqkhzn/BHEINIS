@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-include("config.php");
+include("../db.php");
 
 if (!isset($_GET['id'])) {
     die("Invalid request.");

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("../db.php");
 
 // Destroy all session data
 $_SESSION = [];

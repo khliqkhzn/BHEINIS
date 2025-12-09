@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php'; 
 
 // Step 1: Collect parameters
 $order_id = isset($_GET['order_id']) ? intval($_GET['order_id']) : 0;

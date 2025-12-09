@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("../db.php");
 require_once 'PHPGangsta/GoogleAuthenticator.php';
 
 // ✅ Ensure admin has just logged in but not yet verified OTP

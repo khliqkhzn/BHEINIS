@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php'; // ✅ Make sure database connection is available
+include '../db.php';  // ✅ Make sure database connection is available
 
 // ✅ Log activity before destroying the session
 if (isset($_SESSION['user_id'])) {

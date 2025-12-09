@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'db.php';
+include '../db.php'; 
 
 // Get token
 $token = $_GET['token'] ?? '';

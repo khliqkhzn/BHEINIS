@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php'; // Make sure this file connects to $conn
+include '../db.php';  // Make sure this file connects to $conn
 
 // ✅ Check if user is logged in
 if (!isset($_SESSION['user_id'])) {

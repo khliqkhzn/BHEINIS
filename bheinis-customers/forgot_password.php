@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+include '../db.php'; 
 
 // ✅ Import PHPMailer classes
 use PHPMailer\PHPMailer\PHPMailer;

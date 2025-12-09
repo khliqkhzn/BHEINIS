@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+include '../db.php'; 
 require_once 'PHPGangsta/GoogleAuthenticator.php';
 
 if (!isset($_SESSION['temp_user']) || !isset($_SESSION['totp_secret'])) {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("../db.php");
 
 // Include Google Authenticator library
 require_once 'PHPGangsta/GoogleAuthenticator.php';

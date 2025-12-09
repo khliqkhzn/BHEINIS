@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("../db.php");
 
 // Fetch skip_days setting for Admin
 $skip_sql = "SELECT skip_days FROM otp_skip_settings WHERE role = 'admin' LIMIT 1";
